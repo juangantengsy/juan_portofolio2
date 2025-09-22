@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio - Web Developer</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    .skill-bar { transition: width 2s ease-in-out; }
+  </style>
+</head>
+<body class="bg-white text-gray-900">
+
+  <!-- 🌐 Top Bar Profesional -->
+<div class="bg-black/60 backdrop-blur-md text-gray-200 text-base py-4 px-6 fixed top-0 w-full z-50 shadow-md">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
+    
+    <!-- Kontak -->
+    <div class="flex items-center space-x-8">
+      <span class="flex items-center space-x-2">
+        <i class="fas fa-envelope text-blue-400"></i>
+        <a href="mailto:juan@example.com" class="hover:text-white transition">juan@example.com</a>
+      </span>
+      <span class="flex items-center space-x-2">
+        <i class="fas fa-phone text-green-400"></i>
+        <a href="tel:+628123456789" class="hover:text-white transition">+62 812 3456 789</a>
+      </span>
+    </div>
+
+    <!-- Sosial Media -->
+    <div class="flex space-x-6 mt-3 md:mt-0">
+      <a href="https://facebook.com" target="_blank" class="hover:text-blue-500 transition transform hover:scale-110">
+        <i class="fab fa-facebook-f text-lg"></i>
+      </a>
+      <a href="https://instagram.com" target="_blank" class="hover:text-pink-500 transition transform hover:scale-110">
+        <i class="fab fa-instagram text-lg"></i>
+      </a>
+      <a href="https://github.com" target="_blank" class="hover:text-gray-300 transition transform hover:scale-110">
+        <i class="fab fa-github text-lg"></i>
+      </a>
+      <a href="https://linkedin.com" target="_blank" class="hover:text-blue-400 transition transform hover:scale-110">
+        <i class="fab fa-linkedin-in text-lg"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Tambahkan FontAwesome -->
+<script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+
+
+  <!-- Navbar -->
+  <header class="fixed w-full bg-white shadow-md z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+      <h1 class="text-2xl font-bold">MyPortfolio</h1>
+      <nav>
+        <button id="menu-btn" class="md:hidden text-3xl">&#9776;</button>
+        <ul id="menu" class="hidden md:flex space-x-6 font-semibold">
+          <li><a href="#home" class="hover:text-blue-600">Home</a></li>
+          <li><a href="#about" class="hover:text-blue-600">About</a></li>
+          <li><a href="#projects" class="hover:text-blue-600">Projects</a></li>
+          <li><a href="#experience" class="hover:text-blue-600">Experience</a></li>
+          <li><a href="#skills" class="hover:text-blue-600">Skills</a></li>
+          <li><a href="#certificates" class="hover:text-blue-600">Certificates</a></li>
+          <li><a href="#testimonials" class="hover:text-blue-600">Testimonials</a></li>
+          <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+      <ul class="flex flex-col space-y-4 p-4 font-semibold">
+        <li><a href="#home" class="hover:text-blue-600">Home</a></li>
+        <li><a href="#about" class="hover:text-blue-600">About</a></li>
+        <li><a href="#projects" class="hover:text-blue-600">Projects</a></li>
+        <li><a href="#experience" class="hover:text-blue-600">Experience</a></li>
+        <li><a href="#skills" class="hover:text-blue-600">Skills</a></li>
+        <li><a href="#certificates" class="hover:text-blue-600">Certificates</a></li>
+        <li><a href="#testimonials" class="hover:text-blue-600">Testimonials</a></li>
+        <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+<section id="home" class="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white relative overflow-hidden" data-aos="fade-up">
+  
+  <!-- Decorative Circles -->
+  <div class="absolute top-10 left-10 w-32 h-32 bg-white opacity-10 rounded-full animate-pulse"></div>
+  <div class="absolute bottom-10 right-10 w-40 h-40 bg-white opacity-10 rounded-full animate-ping"></div>
+  
+  <!-- Profile Image -->
+  <img src="https://i.pinimg.com/736x/04/32/0f/04320f63f177eac45bfeac2b8d0436e6.jpg" alt="Juan Photo" class="w-44 h-44 rounded-full border-4 border-yellow-400 shadow-xl mb-6 animate-fade-in">
+  
+  <!-- Name & Title -->
+  <h1 class="text-5xl font-extrabold mb-4">Hi, I'm <span class="text-yellow-300">Juan</span></h1>
+  <h2 class="text-2xl font-semibold mb-6">
+    <span id="typing" class="border-r-2 border-yellow-300 pr-1"></span>
+  </h2>
+  
+  <!-- Buttons -->
+  <div class="space-x-4 mb-6">
+    <a href="assets/cv/Juan_CV.pdf.pdf" download class="bg-yellow-400 text-black px-6 py-3 rounded-lg shadow-lg font-semibold hover:bg-yellow-500 transition">Download CV</a>
+    <a href="#contact" class="bg-white text-indigo-700 px-6 py-3 rounded-lg shadow-lg font-semibold hover:bg-gray-200 transition">Hire Me</a>
+  </div>
+
+  <!-- Social Icons -->
+  <div class="flex space-x-6">
+    <a href="https://github.com/yourusername" target="_blank" class="hover:scale-110 transition transform">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="w-8 h-8">
+    </a>
+    <a href="https://linkedin.com/in/yourusername" target="_blank" class="hover:scale-110 transition transform">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" class="w-8 h-8">
+    </a>
+    <a href="https://instagram.com/yourusername" target="_blank" class="hover:scale-110 transition transform">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" class="w-8 h-8">
+    </a>
+  </div>
+</section>
+
+<!-- Typing Effect Script -->
+<script>
+  const roles = ["Web Developer", "Frontend Engineer", "UI/UX Enthusiast", "Programmer"];
+  let i = 0;
+  let j = 0;
+  let currentRole = "";
+  let isDeleting = false;
+  const typingElement = document.getElementById("typing");
+
+  function type() {
+    currentRole = roles[i];
+    if (isDeleting) {
+      typingElement.textContent = currentRole.substring(0, j--);
+      if (j < 0) {
+        isDeleting = false;
+        i = (i + 1) % roles.length;
+      }
+    } else {
+      typingElement.textContent = currentRole.substring(0, j++);
+      if (j > currentRole.length) {
+        isDeleting = true;
+        setTimeout(type, 1000); // pause before delete
+        return;
+      }
+    }
+    setTimeout(type, isDeleting ? 50 : 100);
+  }
+  type();
+</script>
+
+
+ <!-- About Me Section -->
+<section id="about" class="relative py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white overflow-hidden">
+  <!-- Shape Dekoratif Blur -->
+  <div class="absolute top-0 left-0 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-0 right-0 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl"></div>
+
+  <div class="relative max-w-6xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-12">
+    
+    <!-- Foto -->
+    <div class="flex-shrink-0 w-56 h-56 lg:w-64 lg:h-64 rounded-2xl overflow-hidden shadow-lg ring-4 ring-blue-500/30" data-aos="fade-right">
+      <img src="https://i.pinimg.com/736x/04/32/0f/04320f63f177eac45bfeac2b8d0436e6.jpg" alt="Juan" class="w-full h-full object-cover">
+    </div>
+    
+    <!-- Teks -->
+    <div class="flex-1 text-center lg:text-left" data-aos="fade-left">
+      <h2 class="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">About Me</h2>
+      <p class="text-gray-300 leading-relaxed mb-6">
+        Hi, I’m <span class="text-white font-semibold">Juan</span> — a passionate 
+        <span class="text-blue-400">Web Developer</span> specializing in building 
+        modern, responsive, and user-friendly websites.  
+        I love turning creative ideas into functional digital experiences 
+        with clean code and smooth design.
+      </p>
+      
+      <!-- Info singkat -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-300 text-sm mb-6">
+        <p><span class="font-semibold text-white">Email:</span> juan@example.com</p>
+        <p><span class="font-semibold text-white">Phone:</span> +62 812 3456 7890</p>
+        <p><span class="font-semibold text-white">Location:</span> Jakarta, Indonesia</p>
+        <p><span class="font-semibold text-white">Freelance:</span> Available</p>
+      </div>
+      
+      <!-- Tombol -->
+      <a href="assets/cv/Juan_CV.pdf.pdf" download
+         class="inline-block px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 hover:opacity-90 transition rounded-full shadow-lg font-medium">
+        Download CV
+      </a>
+    </div>
+  </div>
+</section>
+
+ <!-- Projects Section -->
+<section id="projects" class="relative py-24 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white overflow-hidden">
+  <!-- Shape Dekoratif -->
+  <div class="absolute -top-20 -left-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
+  <div class="absolute -bottom-20 -right-20 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"></div>
+
+  <div class="relative max-w-7xl mx-auto px-6 lg:px-12">
+    <!-- Judul -->
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-5xl font-extrabold tracking-tight bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+        My Projects
+      </h2>
+      <p class="text-gray-400 mt-4 max-w-2xl mx-auto">
+        A showcase of my recent works — combining design, development, and modern technology.
+      </p>
+    </div>
+
+    <!-- Grid Projects -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+      
+      <!-- Project Card -->
+      <div class="group relative rounded-3xl overflow-hidden shadow-2xl transform transition duration-500 hover:scale-[1.02]" data-aos="fade-up" data-aos-delay="100">
+        <img src="https://i.pinimg.com/1200x/b1/da/49/b1da4922939d690d5be3f8de45d1a106.jpg" alt="Project 1" class="w-full h-60 object-cover">
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-90"></div>
+        <!-- Content -->
+        <div class="absolute bottom-0 p-6">
+          <h3 class="text-2xl font-semibold mb-2">Portfolio Website</h3>
+          <p class="text-gray-300 text-sm mb-4">Responsive portfolio built with TailwindCSS & AOS.</p>
+          <a href="prank.zip" download
+             class="inline-block px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full text-sm font-medium shadow-lg hover:opacity-90 transition">
+            ⬇ Download Project
+          </a>
+        </div>
+      </div>
+      
+      <!-- Project Card -->
+      <div class="group relative rounded-3xl overflow-hidden shadow-2xl transform transition duration-500 hover:scale-[1.02]" data-aos="fade-up" data-aos-delay="200">
+        <img src="https://i.pinimg.com/1200x/10/56/22/105622c0b5f378052e03ab0a5217c355.jpg" alt="Project 2" class="w-full h-60 object-cover">
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-90"></div>
+        <!-- Content -->
+        <div class="absolute bottom-0 p-6">
+          <h3 class="text-2xl font-semibold mb-2">E-Commerce Platform</h3>
+          <p class="text-gray-300 text-sm mb-4">E-commerce web with cart, payments, and product management.</p>
+          <a href="projects/ecommerce.zip" download
+             class="inline-block px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full text-sm font-medium shadow-lg hover:opacity-90 transition">
+            ⬇ Download Project
+          </a>
+        </div>
+      </div>
+      
+      <!-- Project Card -->
+      <div class="group relative rounded-3xl overflow-hidden shadow-2xl transform transition duration-500 hover:scale-[1.02]" data-aos="fade-up" data-aos-delay="300">
+        <img src="https://i.pinimg.com/736x/5f/49/ed/5f49edb34b735df818ba417371d7eb03.jpg" alt="Project 3" class="w-full h-60 object-cover">
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-90"></div>
+        <!-- Content -->
+        <div class="absolute bottom-0 p-6">
+          <h3 class="text-2xl font-semibold mb-2">Dashboard Web App</h3>
+          <p class="text-gray-300 text-sm mb-4">Professional dashboard with charts, analytics & dark mode.</p>
+          <a href="projects/dashboard.zip" download
+             class="inline-block px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full text-sm font-medium shadow-lg hover:opacity-90 transition">
+            ⬇ Download Project
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+ <!-- ===== Experience Section ===== -->
+<section id="experience" class="py-20 bg-gradient-to-b from-gray-900 to-black text-white">
+  <div class="max-w-6xl mx-auto px-6 text-center" data-aos="fade-up">
+    <h2 class="text-4xl font-extrabold mb-10 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+      Experience
+    </h2>
+
+    <!-- Timeline -->
+    <div class="relative border-l border-gray-700 max-w-3xl mx-auto">
+      
+      <!-- Item 1 -->
+      <div class="mb-10 ml-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="absolute w-3 h-3 bg-cyan-400 rounded-full -left-1.5 border border-gray-900"></div>
+        <h3 class="text-xl font-semibold text-cyan-300">Front-End Developer</h3>
+        <span class="text-sm text-gray-400">2022 - Present | Freelance</span>
+        <p class="mt-2 text-gray-300 leading-relaxed">
+          Membuat website modern, responsif, dengan animasi interaktif menggunakan 
+          HTML, CSS, JavaScript, dan framework modern. Fokus pada pengalaman pengguna.
+        </p>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="mb-10 ml-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="absolute w-3 h-3 bg-cyan-400 rounded-full -left-1.5 border border-gray-900"></div>
+        <h3 class="text-xl font-semibold text-cyan-300">UI/UX Designer</h3>
+        <span class="text-sm text-gray-400">2021 - 2022 | Startup Lokal</span>
+        <p class="mt-2 text-gray-300 leading-relaxed">
+          Mendesain antarmuka aplikasi dengan prinsip desain minimalis dan user-friendly. 
+          Berkolaborasi dengan tim developer untuk implementasi desain.
+        </p>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="ml-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="absolute w-3 h-3 bg-cyan-400 rounded-full -left-1.5 border border-gray-900"></div>
+        <h3 class="text-xl font-semibold text-cyan-300">Intern Web Developer</h3>
+        <span class="text-sm text-gray-400">2020 - 2021 | Perusahaan IT</span>
+        <p class="mt-2 text-gray-300 leading-relaxed">
+          Belajar dasar pengembangan web, deployment, dan optimasi performa website. 
+          Berkontribusi pada beberapa proyek internal perusahaan.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- ===== Skills Section ===== -->
+<section id="skills" class="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
+  <div class="max-w-6xl mx-auto px-6 text-center" data-aos="fade-up">
+    <h2 class="text-4xl font-extrabold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-500">
+      My Skills
+    </h2>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Skill Card -->
+      <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10 hover:border-pink-500 transition-all duration-300" data-aos="zoom-in" data-aos-delay="100">
+        <div class="flex items-center gap-3 mb-4">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" 
+               alt="HTML Logo" class="w-8 h-8">
+          <h3 class="text-lg font-semibold">HTML</h3>
+        </div>
+        <div class="w-full bg-gray-800 rounded-full h-3 overflow-hidden">
+          <div class="bg-gradient-to-r from-orange-400 to-red-600 h-3 rounded-full animate-[progress_2s_ease-out_forwards]" style="width:95%"></div>
+        </div>
+        <p class="text-sm text-gray-400 mt-2">95%</p>
+      </div>
+
+      <!-- Skill Card -->
+      <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10 hover:border-blue-500 transition-all duration-300" data-aos="zoom-in" data-aos-delay="200">
+        <div class="flex items-center gap-3 mb-4">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" 
+               alt="CSS Logo" class="w-8 h-8">
+          <h3 class="text-lg font-semibold">CSS</h3>
+        </div>
+        <div class="w-full bg-gray-800 rounded-full h-3 overflow-hidden">
+          <div class="bg-gradient-to-r from-blue-400 to-cyan-600 h-3 rounded-full animate-[progress_2s_ease-out_forwards]" style="width:90%"></div>
+        </div>
+        <p class="text-sm text-gray-400 mt-2">90%</p>
+      </div>
+
+      <!-- Skill Card -->
+      <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10 hover:border-yellow-500 transition-all duration-300" data-aos="zoom-in" data-aos-delay="300">
+        <div class="flex items-center gap-3 mb-4">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" 
+               alt="JS Logo" class="w-8 h-8">
+          <h3 class="text-lg font-semibold">JavaScript</h3>
+        </div>
+        <div class="w-full bg-gray-800 rounded-full h-3 overflow-hidden">
+          <div class="bg-gradient-to-r from-yellow-400 to-orange-500 h-3 rounded-full animate-[progress_2s_ease-out_forwards]" style="width:85%"></div>
+        </div>
+        <p class="text-sm text-gray-400 mt-2">85%</p>
+      </div>
+
+      <!-- Skill Card -->
+      <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10 hover:border-green-500 transition-all duration-300" data-aos="zoom-in" data-aos-delay="400">
+        <div class="flex items-center gap-3 mb-4">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" 
+               alt="Python Logo" class="w-8 h-8">
+          <h3 class="text-lg font-semibold">Python</h3>
+        </div>
+        <div class="w-full bg-gray-800 rounded-full h-3 overflow-hidden">
+          <div class="bg-gradient-to-r from-green-400 to-emerald-600 h-3 rounded-full animate-[progress_2s_ease-out_forwards]" style="width:80%"></div>
+        </div>
+        <p class="text-sm text-gray-400 mt-2">80%</p>
+      </div>
+
+      <!-- Skill Card -->
+      <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10 hover:border-cyan-500 transition-all duration-300" data-aos="zoom-in" data-aos-delay="500">
+        <div class="flex items-center gap-3 mb-4">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" 
+               alt="React Logo" class="w-8 h-8">
+          <h3 class="text-lg font-semibold">React.js</h3>
+        </div>
+        <div class="w-full bg-gray-800 rounded-full h-3 overflow-hidden">
+          <div class="bg-gradient-to-r from-cyan-400 to-blue-500 h-3 rounded-full animate-[progress_2s_ease-out_forwards]" style="width:75%"></div>
+        </div>
+        <p class="text-sm text-gray-400 mt-2">75%</p>
+      </div>
+
+      <!-- Skill Card -->
+      <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10 hover:border-indigo-500 transition-all duration-300" data-aos="zoom-in" data-aos-delay="600">
+        <div class="flex items-center gap-3 mb-4">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" 
+               alt="NodeJS Logo" class="w-8 h-8">
+          <h3 class="text-lg font-semibold">Node.js</h3>
+        </div>
+        <div class="w-full bg-gray-800 rounded-full h-3 overflow-hidden">
+          <div class="bg-gradient-to-r from-indigo-400 to-purple-600 h-3 rounded-full animate-[progress_2s_ease-out_forwards]" style="width:70%"></div>
+        </div>
+        <p class="text-sm text-gray-400 mt-2">70%</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Progress animation keyframes -->
+<style>
+@keyframes progress {
+  from { width: 0; }
+}
+</style>
+
+
+ <!-- ===== Certificates Section ===== -->
+<section id="certificates" class="py-20 bg-gradient-to-br from-gray-950 via-black to-gray-950 text-white">
+  <div class="max-w-6xl mx-auto px-6 text-center" data-aos="fade-up">
+    <h2 class="text-4xl font-extrabold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-blue-500">
+      Certificates
+    </h2>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+      
+      <!-- Certificate Card -->
+      <div class="relative group rounded-2xl overflow-hidden bg-white/5 backdrop-blur-xl border border-white/10 shadow-lg hover:shadow-purple-500/30 transition-all duration-500" data-aos="zoom-in" data-aos-delay="100">
+        <div class="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-transparent to-pink-500/10 opacity-0 group-hover:opacity-100 transition duration-500"></div>
+        <img src="https://i.pinimg.com/1200x/f8/59/77/f85977215473578968b18a63b4de7bae.jpg" 
+             alt="Certificate 1" 
+             class="w-full h-60 object-cover transform group-hover:scale-105 transition duration-700">
+      </div>
+
+      <!-- Certificate Card -->
+      <div class="relative group rounded-2xl overflow-hidden bg-white/5 backdrop-blur-xl border border-white/10 shadow-lg hover:shadow-blue-500/30 transition-all duration-500" data-aos="zoom-in" data-aos-delay="200">
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-transparent to-cyan-500/10 opacity-0 group-hover:opacity-100 transition duration-500"></div>
+        <img src="https://i.pinimg.com/1200x/f8/59/77/f85977215473578968b18a63b4de7bae.jpg" 
+             alt="Certificate 2" 
+             class="w-full h-60 object-cover transform group-hover:scale-105 transition duration-700">
+      </div>
+
+      <!-- Certificate Card -->
+      <div class="relative group rounded-2xl overflow-hidden bg-white/5 backdrop-blur-xl border border-white/10 shadow-lg hover:shadow-pink-500/30 transition-all duration-500" data-aos="zoom-in" data-aos-delay="300">
+        <div class="absolute inset-0 bg-gradient-to-r from-pink-500/10 via-transparent to-purple-500/10 opacity-0 group-hover:opacity-100 transition duration-500"></div>
+        <img src="https://via.placeholder.com/600x400.png?text=Certificate+3" 
+             alt="Certificate 3" 
+             class="w-full h-60 object-cover transform group-hover:scale-105 transition duration-700">
+      </div>
+
+      <!-- Certificate Card -->
+      <div class="relative group rounded-2xl overflow-hidden bg-white/5 backdrop-blur-xl border border-white/10 shadow-lg hover:shadow-cyan-500/30 transition-all duration-500" data-aos="zoom-in" data-aos-delay="400">
+        <div class="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-transparent to-blue-500/10 opacity-0 group-hover:opacity-100 transition duration-500"></div>
+        <img src="https://via.placeholder.com/600x400.png?text=Certificate+4" 
+             alt="Certificate 4" 
+             class="w-full h-60 object-cover transform group-hover:scale-105 transition duration-700">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+ <!-- ===== Testimonials Section ===== -->
+<section id="testimonials" class="py-20 bg-gray-100 text-gray-900 font-[Poppins]">
+  <div class="max-w-6xl mx-auto px-4 text-center" data-aos="fade-up">
+    <h2 class="text-3xl sm:text-4xl font-extrabold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500">
+      Testimonials
+    </h2>
+
+    <!-- Testimonials List -->
+    <div id="testimonial-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+      <!-- Example Testimonial -->
+      <div class="p-6 rounded-xl bg-white shadow-md border border-gray-200" data-aos="fade-up">
+        <div class="flex justify-center mb-3 text-yellow-400 text-lg">⭐⭐⭐⭐⭐</div>
+        <p class="italic">"Website ini sangat profesional dan desainnya keren banget!"</p>
+        <h4 class="mt-4 font-semibold text-blue-600">- Client 1</h4>
+      </div>
+      <div class="p-6 rounded-xl bg-white shadow-md border border-gray-200" data-aos="fade-up" data-aos-delay="150">
+        <div class="flex justify-center mb-3 text-yellow-400 text-lg">⭐⭐⭐⭐</div>
+        <p class="italic">"Portofolio yang elegan dan mudah dinavigasi."</p>
+        <h4 class="mt-4 font-semibold text-purple-600">- Client 2</h4>
+      </div>
+    </div>
+
+    <!-- Add Testimonial Form -->
+    <div class="max-w-xl mx-auto bg-white p-6 sm:p-8 rounded-xl border border-gray-200 shadow-md" data-aos="fade-up" data-aos-delay="300">
+      <h3 class="text-xl sm:text-2xl font-bold mb-6 text-gray-800">Add Your Testimonial</h3>
+      <form id="testimonial-form" class="space-y-4">
+        <input type="text" id="name" placeholder="Your Name" required
+               class="w-full px-4 py-3 rounded-lg bg-gray-100 border border-gray-300 focus:outline-none focus:border-blue-500">
+        <textarea id="message" placeholder="Your Comment" required
+               class="w-full px-4 py-3 rounded-lg bg-gray-100 border border-gray-300 focus:outline-none focus:border-blue-500"></textarea>
+        
+        <!-- Rating Stars -->
+        <div class="flex justify-center space-x-2 text-2xl text-gray-400 cursor-pointer" id="star-rating">
+          <span data-value="1">⭐</span>
+          <span data-value="2">⭐</span>
+          <span data-value="3">⭐</span>
+          <span data-value="4">⭐</span>
+          <span data-value="5">⭐</span>
+        </div>
+
+        <button type="submit"
+                class="w-full py-3 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 font-bold text-white hover:scale-105 transition transform">
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- JavaScript for Testimonials + Rating -->
+<script>
+  const form = document.getElementById("testimonial-form");
+  const list = document.getElementById("testimonial-list");
+  const stars = document.querySelectorAll("#star-rating span");
+  let selectedRating = 0;
+
+  // Star rating selection
+  stars.forEach(star => {
+    star.addEventListener("click", () => {
+      selectedRating = star.getAttribute("data-value");
+      stars.forEach(s => s.classList.remove("text-yellow-400"));
+      for(let i=0; i<selectedRating; i++) {
+        stars[i].classList.add("text-yellow-400");
+      }
+    });
+  });
+
+  // Form submit
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if(name && message && selectedRating > 0) {
+      // Create new testimonial card
+      const card = document.createElement("div");
+      card.className = "p-6 rounded-xl bg-white shadow-md border border-gray-200";
+      
+      let starsHTML = "";
+      for(let i=0; i<selectedRating; i++) starsHTML += "⭐";
+
+      card.innerHTML = `
+        <div class="flex justify-center mb-3 text-yellow-400 text-lg">${starsHTML}</div>
+        <p class="italic">"${message}"</p>
+        <h4 class="mt-4 font-semibold text-blue-600">- ${name}</h4>
+      `;
+
+      // Add to top of list
+      list.prepend(card);
+
+      // Reset form
+      form.reset();
+      selectedRating = 0;
+      stars.forEach(s => s.classList.remove("text-yellow-400"));
+    } else {
+      alert("Please fill out all fields and select a rating ⭐");
+    }
+  });
+</script>
+
+
+
+  <!-- Contact Section -->
+<section id="contact" class="py-20 bg-gray-900 text-white">
+  <div class="max-w-6xl mx-auto px-6 lg:px-12" data-aos="fade-up">
+    <h2 class="text-4xl font-bold text-center mb-12 text-indigo-400">Contact Me</h2>
+    
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      
+      <!-- Info Kontak -->
+      <div class="space-y-6" data-aos="fade-right">
+        <h3 class="text-2xl font-semibold mb-4">Get In Touch</h3>
+        <p class="text-gray-300 mb-6">
+          Tertarik bekerja sama? Silakan hubungi saya melalui form di samping atau lewat kontak berikut.
+        </p>
+        
+        <div class="space-y-4 text-gray-300">
+          <p><span class="font-semibold text-white">📍 Location:</span> Jakarta, Indonesia</p>
+          <p><span class="font-semibold text-white">📧 Email:</span> juan@example.com</p>
+          <p><span class="font-semibold text-white">📱 Phone:</span> +62 812 3456 7890</p>
+        </div>
+
+        <!-- Sosial Media -->
+        <div class="flex gap-4 mt-6">
+          <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-indigo-500 hover:bg-indigo-600 transition shadow-lg">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-indigo-500 hover:bg-indigo-600 transition shadow-lg">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-indigo-500 hover:bg-indigo-600 transition shadow-lg">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-indigo-500 hover:bg-indigo-600 transition shadow-lg">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Form Kontak + Maps -->
+      <div data-aos="fade-left" class="space-y-6">
+        <form class="space-y-4 bg-gray-800 p-8 rounded-2xl shadow-lg">
+          <div>
+            <input type="text" placeholder="Your Name" class="w-full p-3 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-400">
+          </div>
+          <div>
+            <input type="email" placeholder="Your Email" class="w-full p-3 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-400">
+          </div>
+          <div>
+            <textarea rows="4" placeholder="Your Message" class="w-full p-3 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-400"></textarea>
+          </div>
+          <button type="submit" class="w-full py-3 bg-indigo-500 hover:bg-indigo-600 transition rounded-lg font-semibold shadow-md">
+            Send Message
+          </button>
+        </form>
+
+        <!-- Google Maps Embed -->
+        <div class="w-full h-64 rounded-2xl overflow-hidden shadow-lg">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.123456789!2d106.827153!3d-6.175110!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1234567890%3A0xabcdef1234567890!2sMonas%2C%20Jakarta!5e0!3m2!1sen!2sid!4v1234567890"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FontAwesome untuk ikon sosial -->
+<script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+
+
+  <!-- Footer Section (Glass Transparent) -->
+<footer class="relative z-50 bg-white/10 backdrop-blur-md text-gray-200 py-12 font-[Poppins]" data-aos="fade-up">
+  <div class="max-w-6xl mx-auto px-6 lg:px-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+    <!-- About / Logo -->
+    <div>
+      <h3 class="text-2xl font-bold text-indigo-400 mb-4">Juan Portfolio</h3>
+      <p class="text-gray-300">Web Developer profesional, membuat website modern, elegan, dan responsif.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h4 class="text-xl font-semibold text-indigo-400 mb-4">Quick Links</h4>
+      <ul class="space-y-2">
+        <li><a href="#hero" class="hover:text-white transition">Home</a></li>
+        <li><a href="#about" class="hover:text-white transition">About Me</a></li>
+        <li><a href="#projects" class="hover:text-white transition">Projects</a></li>
+        <li><a href="#skills" class="hover:text-white transition">Skills</a></li>
+        <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Social Media -->
+    <div>
+      <h4 class="text-xl font-semibold text-indigo-400 mb-4">Follow Me</h4>
+      <div class="flex flex-wrap gap-3">
+        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-indigo-500 hover:bg-indigo-600 transition shadow-lg">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-pink-500 hover:bg-pink-600 transition shadow-lg">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-900 transition shadow-lg">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-blue-400 hover:bg-blue-500 transition shadow-lg">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-blue-700 hover:bg-blue-800 transition shadow-lg">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-red-600 hover:bg-red-700 transition shadow-lg">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Contact Info -->
+    <div>
+      <h4 class="text-xl font-semibold text-indigo-400 mb-4">Contact Info</h4>
+      <p>📍 Jakarta, Indonesia</p>
+      <p>📧 juan@example.com</p>
+      <p>📱 +62 812 3456 7890</p>
+    </div>
+
+  </div>
+
+  <!-- Copyright -->
+  <div class="mt-12 border-t border-gray-600 pt-6 text-center text-gray-400 text-sm">
+    &copy; 2025 Juan. All rights reserved.
+  </div>
+</footer>
+
+<!-- FontAwesome untuk ikon sosial media -->
+<script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+    // Navbar toggle
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
